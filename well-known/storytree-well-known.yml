@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of https://simpleprints.com/.well-known/*
+host: https://simpleprints.com
+notes: >-
+  No /.well-known/ discovery documents are published. The Wix front end returns
+  an HTTP 400 error page for each probed path. A machine-readable llms.txt IS
+  published at the site root (200) and is captured at llms/storytree-llms.txt;
+  it advertises a Wix Site MCP endpoint (see mcp/storytree-mcp.yml).
+documents:
+  - path: /.well-known/security.txt
+    status: 400
+  - path: /.well-known/openid-configuration
+    status: 400
+  - path: /.well-known/oauth-authorization-server
+    status: 400
+  - path: /.well-known/api-catalog
+    status: 400
+  - path: /.well-known/ai-plugin.json
+    status: 400
+  - path: /llms.txt
+    status: 200
+    file: ../llms/storytree-llms.txt

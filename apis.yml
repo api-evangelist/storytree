@@ -1,7 +1,30 @@
 aid: storytree
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/storytree.png
 name: Storytree
-description: Storytree is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Storytree Inc. is a Palo Alto consumer photo company, backed by 500 Global,
+  that operates SimplePrints (simpleprints.com, formerly getsimpleprints.com) —
+  a mobile-first service that turns the photos on your phone into physical
+  products: layflat and mini photo books, canvas prints, metal prints and metal
+  desk prints, photo cards, and wall calendars. The app pulls images directly
+  from the phone with no exporting or reformatting, and the business adds a
+  referral program, promotional discounts, and a schools program. SimplePrints
+  is a business-to-consumer mobile app and does NOT publish a developer API,
+  SDKs, OpenAPI, or a developer portal. The one machine-consumable surface it
+  exposes is a Wix-hosted llms.txt and a generic Wix Site MCP endpoint for
+  agentic access to public site content (business details, site search, and a
+  bridge to Wix business-solution APIs).
 url: https://raw.githubusercontent.com/api-evangelist/storytree/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +34,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Photo Printing
+- Consumer
+- Mobile App
+- Photography
+- Ecommerce
+- Wix
+- MCP
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,4 +52,19 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
+  url: https://simpleprints.com
+- type: Website
   url: https://getsimpleprints.com
+- type: LLMsTxt
+  url: llms/storytree-llms.txt
+- type: MCPServer
+  url: mcp/storytree-mcp.yml
+- type: WellKnown
+  url: well-known/storytree-well-known.yml
+- type: DomainSecurity
+  url: security/storytree-domain-security.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 4
+  pass: local-v1

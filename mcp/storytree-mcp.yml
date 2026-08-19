@@ -2,13 +2,11 @@ generated: '2026-07-21'
 method: searched
 status: published
 source: https://simpleprints.com/llms.txt
-notes: >-
-  SimplePrints (Storytree Inc.) is a Wix-hosted site that exposes a Wix Site MCP
-  endpoint. Verified live: an unauthenticated JSON-RPC tools/list POST to the
-  endpoint returns a real tool set. This is the generic Wix Site MCP surface
-  (business details, site search, Wix API docs + call bridge), not a bespoke
-  SimplePrints developer API. No authentication is required to connect; only
-  public site information is accessible.
+notes: 'SimplePrints (Storytree Inc.) is a Wix-hosted site that exposes a Wix Site MCP endpoint. Verified
+  live: an unauthenticated JSON-RPC tools/list POST to the endpoint returns a real tool set. This is the
+  generic Wix Site MCP surface (business details, site search, Wix API docs + call bridge), not a bespoke
+  SimplePrints developer API. No authentication is required to connect; only public site information is
+  accessible.'
 docs: https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp
 server:
   name: simpleprints-site
@@ -16,23 +14,28 @@ server:
   url: https://www.simpleprints.com/_api/mcp
   auth: none
 tools:
-  - name: GetBusinessDetails
-    description: Retrieves business and site details such as timezone, email, phone, and address.
-  - name: SearchInSite
-    description: Searches the site for information (searchTerm).
-  - name: SearchSiteApiDocs
-    description: >-
-      Retrieves the API documentation for the Wix business solutions installed on
-      this site and informs the AI client how to use the APIs (searchTerm).
-  - name: GenerateVisitorToken
-    description: >-
-      Creates a new visitor session and obtains a visitor access token; must be
-      called before any CallWixSiteAPI request when no visitor token is available.
-  - name: CallWixSiteAPI
-    description: >-
-      Calls API methods on the site to perform actions on a visitor's behalf, such
-      as querying site data, booking, or starting a purchase (visitorToken, url, method, body).
-  - name: ReadFullDocsArticle
-    description: Fetches a complete article from the Wix developer documentation portal (articleUrl).
-  - name: ReadFullDocsMethodSchema
-    description: Fetches the full schema for a Wix API method before calling it (articleUrl).
+- name: GetBusinessDetails
+  description: Retrieves business and site details such as timezone, email, phone, and address.
+- name: SearchInSite
+  description: Searches the site for information (searchTerm).
+- name: SearchSiteApiDocs
+  description: Retrieves the API documentation for the Wix business solutions installed on this site and
+    informs the AI client how to use the APIs (searchTerm).
+- name: GenerateVisitorToken
+  description: Creates a new visitor session and obtains a visitor access token; must be called before
+    any CallWixSiteAPI request when no visitor token is available.
+- name: CallWixSiteAPI
+  description: Calls API methods on the site to perform actions on a visitor's behalf, such as querying
+    site data, booking, or starting a purchase (visitorToken, url, method, body).
+- name: ReadFullDocsArticle
+  description: Fetches a complete article from the Wix developer documentation portal (articleUrl).
+- name: ReadFullDocsMethodSchema
+  description: Fetches the full schema for a Wix API method before calling it (articleUrl).
+deployment:
+  mode: remote
+  endpoint: https://www.simpleprints.com/_api/mcp
+  verified: probed
+  probe: live
+  tools: 9
+  checked: '2026-08-12'
+  source: catalog MCP census

@@ -37,6 +37,9 @@ description: >-
   agentic access to public site content (business details, site search, and a
   bridge to Wix business-solution APIs).
 url: https://raw.githubusercontent.com/api-evangelist/storytree/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
+x-api-posture-note: "SimplePrints is a business-to-consumer mobile app and does NOT publish a developer API, SDKs, OpenAPI, or a developer portal."
 x-type: company
 x-source: vc-portfolio
 x-backed-by:

@@ -2,12 +2,12 @@ generated: '2026-07-21'
 method: searched
 source: live probes of https://simpleprints.com/.well-known/*
 host: https://simpleprints.com
-notes: >-
-  No /.well-known/ discovery documents are published. The Wix front end returns
-  an HTTP 400 error page for each probed path. A machine-readable llms.txt IS
-  published at the site root (200) and is captured at llms/storytree-llms.txt;
-  it advertises a Wix Site MCP endpoint (see mcp/storytree-mcp.yml).
-documents:
+notes: No /.well-known/ discovery documents are published. The Wix front end returns an HTTP 400 error
+  page for each probed path. A machine-readable llms.txt IS published at the site root (200) and is captured
+  at llms/storytree-llms.txt; it advertises a Wix Site MCP endpoint (see mcp/storytree-mcp.yml).
+hosts:
+- host: https://simpleprints.com
+  documents:
   - path: /.well-known/security.txt
     status: 400
   - path: /.well-known/openid-configuration
@@ -18,6 +18,8 @@ documents:
     status: 400
   - path: /.well-known/ai-plugin.json
     status: 400
-  - path: /llms.txt
-    status: 200
-    file: ../llms/storytree-llms.txt
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
